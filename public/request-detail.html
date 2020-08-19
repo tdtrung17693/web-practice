@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Number 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        .conversations {
+            height: 400px;
+            overflow-y: scroll;
+            padding: 1rem;
+        }
+
+        .logs {
+            height: 400px;
+            overflow-y: scroll;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><h1>Group 3</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                        <a class="nav-link active" href="RequestList.html">
+                            Manage Request
+                        </a>
+                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">View Request List</a>
+                        <a class="dropdown-item" href="#">Create Request</a>
+                    </div> -->
+                    </li>
+                </ul>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="Login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav><br>
+    </div>
+    <div class="container-fluid pb-3">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="my-4">Request Number 1 <span class="badge badge-warning">Pending</span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                DC Response
+                            </div>
+                            <div class="card-body">
+                                <textarea class="form-control w-100" name="response" cols="30" rows="5"
+                                    placeholder="Response..."></textarea>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="button" class="btn btn-primary">Approve</button>
+                                <button type="button" class="btn btn-danger">Reject</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                Details
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6 class="text-black-50">Created date:</h6>
+                                        <p><time datetime="2020-08-11 11:50">2020.08.11 - 11:50</time></p>
+
+                                        <h6 class="text-black-50">Updated date:</h6>
+                                        <p><time datetime="2020-08-11 11:55">2020.08.11 - 11:55</time></p>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6 class="text-black-50">Created by:</h6>
+                                        <p>User 1</p>
+                                        <h6 class="text-black-50">Updated by</h6>
+                                        <p>User 2</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="title" class="h6 text-black-50">
+                                                Title
+                                            </label>
+                                            <input type="text" class="form-control" id="title"
+                                                value="Just another request">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6 class="text-black-50">From:</h6>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fa fa-calendar"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <input type="date" class="form-control" value="2020-08-15"
+                                                    aria-label="Request's start date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fa fa-clock"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <input type="time" class="form-control" value="07:00"
+                                                    aria-label="Request's start date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6 class="text-black-50">To:</h6>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fa fa-calendar"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <input type="date" class="form-control" value="2020-08-17"
+                                                    aria-label="Request's start date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fa fa-clock"
+                                                            aria-hidden="true"></i></span>
+                                                </div>
+                                                <input type="time" class="form-control" value="07:00"
+                                                    aria-label="Request's start date" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6 class="text-black-50">Server</h6>
+                                        <p>arvato-pez-dk.giantleap.no - 46.255.17.198</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="description" class="h6 text-black-50">
+                                            Description
+                                        </label>
+                                        <textarea name="description" id="description" cols="20" rows="10"
+                                            class="form-control">Description</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Conversation
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="conversations">
+                                    <div class="media">
+                                        <a class="mr-3" href="#">
+                                            <img src="https://via.placeholder.com/64.png/09f/fff"
+                                                class="mr-3 rounded-circle" alt="Placeholder image">
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="mt-0">User 1</h5>
+                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                            ante
+                                            sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+                                            turpis.
+                                            Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                                            felis in
+                                            faucibus.
+
+                                            <div class="media mt-3">
+                                                <a class="mr-3" href="#">
+                                                    <img src="https://via.placeholder.com/64.png/09f/fff"
+                                                        class="mr-3 rounded-circle" alt="Placeholder image">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h5 class="mt-0">User 2</h5>
+                                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                                    scelerisque
+                                                    ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
+                                                    tempus
+                                                    viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                                                    Donec
+                                                    lacinia congue felis in faucibus.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media mt-3">
+                                        <a class="mr-3" href="#">
+                                            <img src="https://via.placeholder.com/64.png/09f/fff"
+                                                class="mr-3 rounded-circle" alt="Placeholder image">
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="mt-0">User 2</h5>
+                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                            ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                                            viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                            lacinia congue felis in faucibus.
+                                        </div>
+                                    </div>
+                                    <div class="media mt-3">
+                                        <a class="mr-3" href="#">
+                                            <img src="https://via.placeholder.com/64.png/09f/fff"
+                                                class="mr-3 rounded-circle" alt="Placeholder image">
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="mt-0">User 2</h5>
+                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                            ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                                            viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                            lacinia congue felis in faucibus.
+                                        </div>
+                                    </div>
+                                    <div class="media mt-3">
+                                        <a class="mr-3" href="#">
+                                            <img src="https://via.placeholder.com/64.png/09f/fff"
+                                                class="mr-3 rounded-circle" alt="Placeholder image">
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="mt-0">User 2</h5>
+                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                            ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                                            viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                            lacinia congue felis in faucibus.
+                                        </div>
+                                    </div>
+                                    <div class="media mt-3">
+                                        <a class="mr-3" href="#">
+                                            <img src="https://via.placeholder.com/64.png/09f/fff"
+                                                class="mr-3 rounded-circle" alt="Placeholder image">
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="mt-0">User 2</h5>
+                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                            ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+                                            viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                            lacinia congue felis in faucibus.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <div class="row">
+                                    <div class="col-lg-9 col-12">
+                                        <textarea class="form-control" name="message"></textarea>
+                                    </div>
+                                    <div class="col-lg-3 col-12 mt-3 mt-lg-0">
+                                        <button type="button" class="btn btn-primary btn-block">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <div class="card">
+                            <div class="card-header">
+                                Change Logs
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="logs">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <div class="log-line">
+                                                <strong>someone@mail.com</strong> on <em><time
+                                                        datetime="2020-08-11 12:00">2020-08-11 12:00</time></em>
+                                                <div>
+                                                    <ul>
+                                                        <li>Updated Title request: "test request" -> "test request 23"
+                                                        </li>
+                                                        <li>Updated From Date request: "Aug 7 2020 6:56AM" -> "Jan 1
+                                                            1970
+                                                            6:22AM"</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="log-line">
+                                                <strong>someone2@mail.com</strong> on <em><time
+                                                        datetime="2020-08-11 12:00">2020-08-11 12:00</time></em>
+                                                <div>
+                                                    <ul>
+                                                        <li>Updated Title request: "test request" -> "test request 23"
+                                                        </li>
+                                                        <li>Updated From Date request: "Aug 7 2020 6:56AM" -> "Jan 1
+                                                            1970
+                                                            6:22AM"</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <div class="log-line">
+                                                <strong>someone2@mail.com</strong> on <em><time
+                                                        datetime="2020-08-11 12:00">2020-08-11 12:00</time></em>
+                                                <div>
+                                                    <ul>
+                                                        <li>Updated Title request: "test request" -> "test request 23"
+                                                        </li>
+                                                        <li>Updated From Date request: "Aug 7 2020 6:56AM" -> "Jan 1
+                                                            1970
+                                                            6:22AM"</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="log-line">
+                                                <strong>someone2@mail.com</strong> on <em><time
+                                                        datetime="2020-08-11 12:00">2020-08-11 12:00</time></em>
+                                                <div>
+                                                    <ul>
+                                                        <li>Updated Title request: "test request" -> "test request 23"
+                                                        </li>
+                                                        <li>Updated From Date request: "Aug 7 2020 6:56AM" -> "Jan 1
+                                                            1970
+                                                            6:22AM"</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

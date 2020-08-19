@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Request List</title>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><h1>Group 3</h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                        <a class="nav-link active" href="RequestList.html">
+                            Manage Request
+                        </a>
+                    <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">View Request List</a>
+                        <a class="dropdown-item" href="#">Create Request</a>
+                    </div> -->
+                    </li>
+                </ul>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="Login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav><br>
+    </div>
+    <h2 class="mb-2 center d-flex justify-content-center">
+        Requests Management
+    </h2>
+    <div class="mb-3 .d-sm-inline-flex">
+        <!--<a class="btn btn-success ml-sm-4" href="#" role="button"
+        >Create a new Request</a
+      >-->
+        <!------------------------------------------------------------------------------------------->
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createRequestModal">
+          Create New Request
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="createRequestModal" tabindex="-1" role="dialog" aria-labelledby="createRequestModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createRequestModalLabel">Create New Request</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div id="form-wrapper" style="max-width:500px;margin:auto;">
+                            <form>
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Title</label>
+                                    <input type="text" class="form-control" id="title">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-8 col-form-label">
+                                        <label for="fromDate">From Date</label>
+                                        <input type="date" class="form-control" id="fromDate">
+                                    </div>
+                                    <div class="form-group col-4 col-form-label">
+                                        <label for="fromDateTime">Time</label>
+                                        <input type="time" class="form-control" id="fromDateTime">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-8 col-form-label">
+                                        <label for="toDate">To Date</label>
+                                        <input type="date" class="form-control" id="toDate">
+                                    </div>
+                                    <div class="form-group col-4 col-form-label">
+                                        <label for="toDateTime">Time</label>
+                                        <input type="time" class="form-control" id="toDateTime">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="server" class="col-form-label">Server</label>
+                                    <input type="text" class="form-control" id="server">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="col-form-label">Description</label>
+                                    <input type="text" class="form-control" id="description">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success ">Save</button>
+                        <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!------------------------------------------------------------------------------------------->
+        <form class="form-inline d-flex justify-content-end mr-sm-4">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+        </form>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item active">Result</li>
+        <li class="list-group-item">
+            <div class="panel-body" style="overflow-x: scroll;">
+                <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Create Date</th>
+                            <th scope="col">Update Date</th>
+                            <th scope="col">Server</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Request From</th>
+                            <th scope="col">Request To</th>
+                            <th scope="col">#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">3505</th>
+                            <td style="color: red;">Close</td>
+                            <td>2020.08.04 - 11:44 - diep.anh.tuan@netpower.no</td>
+                            <td>2020.08.04 - 11:55 - Khang Hoang Dinh</td>
+                            <td>Byraservice_Xinet_Portal - 46.255.20.110</td>
+                            <td>
+                                <strong>Title:</strong> toi muon access x.x.x.1
+                                <br />
+                                <strong>Request:</strong>
+                                <br />
+                                <strong>Answer:</strong> ok luôn em ơi
+                            </td>
+                            <td>2020.08.06 - 00:00</td>
+                            <td>2020.08.12 - 00:00</td>
+                            <td>
+                                <a class="btn btn-info" href="request-detail.html" role="button">Edit</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3510</th>
+                            <td style="color: red;">Close</td>
+                            <td>2020.08.04 - 15:09 - doan.nguyen.khoi@netpower.no</td>
+                            <td>2020.08.06 - 15:03 - doan.nguyen.khoi@netpower.no</td>
+                            <td>aston-app01.npcloud.no - 10.106.101.20</td>
+                            <td>
+                                <strong>Title:</strong> test n3
+                                <br />
+                                <strong>Request:</strong>: 15641.3221313613
+                                <br />
+                                <strong>Answer:</strong>
+                            </td>
+                            <td>2020.08.06 - 00:00</td>
+                            <td>2020.08.07 - 00:00</td>
+                            <td><a class="btn btn-info" href="#" role="button">Edit</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3517</th>
+                            <td style="color: blue;">New</td>
+                            <td>2020.08.06 - 19:32 - ho.tran@netpower.no</td>
+                            <td>2020.08.11 - 10:35 - khoa.nguyen@netpower.no</td>
+                            <td>apcoa-pez.giantleap.no - 46.255.17.57</td>
+                            <td>
+                                <strong>Title:</strong> new request open abc
+                                <br />
+                                <strong>Request:</strong>: aaaa
+                                <br />
+                                <strong>Answer:</strong>
+                            </td>
+                            <td>2020.08.06 - 00:00</td>
+                            <td>2020.08.13 - 00:00</td>
+                            <td><a class="btn btn-info" href="#" role="button">Edit</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3502</th>
+                            <td style="color: green;">Open</td>
+                            <td>2020.08.04 - 11:31 - diep.anh.tuan@netpower.no</td>
+                            <td>2020.08.04 - 13:33 - diep.anh.tuan@netpower.no</td>
+                            <td>apcoa-dk.giantleap.no - 46.255.17.61</td>
+                            <td>
+                                <strong>Title:</strong> access to server x.x.x.x
+                                <br />
+                                <strong>Request:</strong> Cho em truy cap voi
+                                <br />
+                                <strong>Answer:</strong> what the hell
+                            </td>
+                            <td>2020.08.04 - 11:00</td>
+                            <td>2020.08.05 - 00:00</td>
+                            <td><a class="btn btn-info" href="#" role="button">Edit</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3521</th>
+                            <td style="color: red;">Close</td>
+                            <td>2020.08.11 - 16:20 - ??? ???</td>
+                            <td>2020.08.11 - 16:43 - long.dao@netpower.no</td>
+                            <td>arvato-pez-dk.giantleap.no - 46.255.17.198</td>
+                            <td>
+                                <strong>Title:</strong> ???
+                                <br />
+                                <strong>Request:</strong>
+                                <br />
+                                <strong>Answer:</strong> !!
+                            </td>
+                            <td>2020.07.29 - 00:00</td>
+                            <td>2020.08.04 - 00:00</td>
+                            <td><a class="btn btn-info" href="#" role="button">Edit</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
